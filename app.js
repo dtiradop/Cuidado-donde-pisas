@@ -206,8 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
             Modalbutton.addEventListener('click', cerrarModal);
             Modalbutton2.addEventListener('click', (event) =>  bomba(casilla));
             contador++;
-            console.log(contador)
-  
             
         } else {
             let total = casilla.getAttribute('data');
@@ -224,10 +222,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     }
-    else{
+    else {
         finPartida = true;
         resultado.textContent = 'Muy bien PERDISTE!!!';
         resultado.classList.add('back-red');
+        bomba(casilla)
     }
     }
 
