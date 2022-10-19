@@ -6,14 +6,14 @@
     <title>Buscaminas</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+
 </head>
 <body>
     <div class="main">
         <div class="header">
             <h1>Cuidado donde pisas</h1>
             <div class="formulario-juego">
-                <button class="btn-generar">Generar tabla</button>
+                <button class="btn-generar" onclick="crearJuego()">Generar tabla</button>
             </div>
         </div>
         <div class="contenedor-juego hidden">
@@ -21,6 +21,16 @@
             <div class="juego"></div>
             <div class="resultado-juego"></div>
         </div>
+        <div id="modal">
+            <div id="modalInfo">
+                <h2 id="modalTitulo">Tema</h2>
+                <p id="modalParrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque debitis aspernatur perspiciatis commodi, dolore sunt fugiat voluptates earum nisi, recusandae voluptate modi consectetur harum vitae iste ducimus id, fugit at?</p>
+                <button id="modalButton">Cerrar</button>
+                <button id="modalButton2">Cerrar2</button>
+            </div>
+        </div>
     </div>
+    <script src="app.js"></script>
 </body>
+
 </html>

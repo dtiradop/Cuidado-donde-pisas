@@ -1,4 +1,4 @@
-edocument.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
     // Selectores
     const contenedorJuego = document.querySelector('.contenedor-juego');
@@ -11,9 +11,10 @@ edocument.addEventListener('DOMContentLoaded', () => {
     // Listeners
     botonGenerar.addEventListener('click', crearJuego);
 
+
     // Variables GLOBALES
     let width = 10;             // => Factor de tamaño del juego (40rem) y las casillas (4rem). Se modifica en crearJuego().
-    let numBombas = 20;         // => Número de bombas. Se modifica en crearJuego().
+    let numBombas = 10;         // => Número de bombas. Se modifica en crearJuego().
     let numBanderas = 0;        // => Número de banderas marcadas
     let casillas = [];          // => Array con las casillas
     let finPartida = false;     // => Marca de si se ha picado en una bomba
@@ -101,13 +102,14 @@ edocument.addEventListener('DOMContentLoaded', () => {
      * @param casillaClickeada Casilla donde si hizo click
      */
     function bomba(casillaClickeada) {
+        cerrarModal();
         finPartida = true;
         casillaClickeada.classList.add('back-red');
 
         // Desvelamos todas las bombas
         casillas.forEach((casilla, index, array) => {
             if (casilla.classList.contains('bomba')) {
-                casilla.innerHTML = '💣';
+                casilla.innerHTML = '🧟‍♂️';
                 casilla.classList.remove('bomba');
                 casilla.classList.add('marcada');
             }
@@ -131,7 +133,9 @@ edocument.addEventListener('DOMContentLoaded', () => {
                 casilla.innerHTML = '🚩';
                 numBanderas++;
                 actualizaNumBanderas();
-                compruebaPartida();
+                if (numBanderas == 10){
+                    compruebaPartida();
+                }
             } else {
                 casilla.classList.remove('bandera');
                 casilla.innerHTML = '';
@@ -139,7 +143,6 @@ edocument.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
 
     /**
      * @description Comprueba si se ha ganado o no una partida
@@ -157,6 +160,19 @@ edocument.addEventListener('DOMContentLoaded', () => {
             resultado.textContent = 'Muy bien GANASTE!!!';
             resultado.classList.add('back-green');
         }
+        else{
+            finPartida = true;
+            resultado.textContent = 'Muy bien PERDISTE!!!';
+            resultado.classList.add('back-red');
+            
+            casillas.forEach((casilla, index, array) => {
+                if (casilla.classList.contains('bomba')) {
+                    casilla.innerHTML = '🧟‍♂️';
+                    casilla.classList.remove('bomba');
+                    casilla.classList.add('marcada');
+                }
+            });
+        }
     }
 
 
@@ -173,13 +189,26 @@ edocument.addEventListener('DOMContentLoaded', () => {
      * @description Función al hacer CLICK
      * @param casilla Casilla sobre la que se hizo click
      **/
+     
+    var contador = 0;
     function click(casilla) {
         // Comprobamos si la casilla no es clickeable
         if (casilla.classList.contains('marcada') || casilla.classList.contains('bandera') || finPartida) return;
 
+        if (contador < 3) {
         if (casilla.classList.contains('bomba')) {
             // Casilla bomba
-            bomba(casilla);
+             /*bomba(casilla);*/
+            document.getElementById("modal").style.display = "flex";
+            document.getElementById("modalTitulo").innerHTML = "Manolo";
+            const Modalbutton = document.querySelector('#modalButton');
+            const Modalbutton2 = document.querySelector('#modalButton2');
+            Modalbutton.addEventListener('click', cerrarModal);
+            Modalbutton2.addEventListener('click', (event) =>  bomba(casilla));
+            contador++;
+            console.log(contador)
+  
+            
         } else {
             let total = casilla.getAttribute('data');
             if (total != 0) {
@@ -195,7 +224,12 @@ edocument.addEventListener('DOMContentLoaded', () => {
 
         }
     }
-
+    else{
+        finPartida = true;
+        resultado.textContent = 'Muy bien PERDISTE!!!';
+        resultado.classList.add('back-red');
+    }
+    }
 
     /**
      * @description Función al hacer DOBLE-CLICK. Sólo se puede hacer sobre una casilla marcada
@@ -208,6 +242,9 @@ edocument.addEventListener('DOMContentLoaded', () => {
          revelarCasillas(casilla);
     }
 
+    function cerrarModal(){
+        document.getElementById("modal").style.display = "none";
+    }
 
     /** 
      * @description Función principal que crea el juego 
@@ -267,4 +304,5 @@ edocument.addEventListener('DOMContentLoaded', () => {
         añadeNumeros();
         actualizaNumBanderas();
     }
+
 });
