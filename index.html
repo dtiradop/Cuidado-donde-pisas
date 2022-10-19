@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Cuidado donde pisas</h1>
+            <div class="formulario-juego">
+                <button class="btn-generar">Generar tabla</button>
+            </div>
+        </div>
+        <div class="contenedor-juego hidden">
+            <h2>Banderas colocadas: <span id="num-banderas"></span> (faltan <span id="banderas-restantes"></span>)</h2>
+            <div class="juego"></div>
+            <div class="resultado-juego"></div>
+        </div>
+    </div>
+</body>
+</html>
