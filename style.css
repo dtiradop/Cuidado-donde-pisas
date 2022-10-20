@@ -11,11 +11,19 @@ body{
     -ms-user-select: none;
     user-select: none;
     font-family: 'Montserrat', sans-serif;
+    background-image: url(/imgs/Halloween-2022.png);
+    background-size: cover;
+    background-repeat:no-repeat ;
 }
 
 .main {
-    width: fit-content;
-    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 21px 0px;
 }
 
 #modal{
@@ -80,7 +88,9 @@ body{
 \*******************************************************************************/
 .header > h1 {
     text-align: center;
-    letter-spacing: 0.5rem;
+    color: #FFE874;
+    font-size: 60px;
+
 }
 
 .formulario-juego,
@@ -90,7 +100,7 @@ body{
 }
 
 .formulario-juego {
-    justify-content: space-between;
+    justify-content: center;
     margin: 0rem 2rem;
 }
 
@@ -113,7 +123,16 @@ body{
 
 .btn-generar {
     margin-left: 2rem;
-    padding: 0rem 2rem;
+    padding: 0.5rem 2rem;
+    background: #FFE874;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #E05C1F;
+    cursor: pointer;
+    transition: ease-in-out .3s all;
+    margin-top: 15px;
+    border: none;
 }
 
 
@@ -147,7 +166,7 @@ body{
 .juego {
     display: flex;
     flex-wrap: wrap;
-    background-color: grey;
+    background-color: #AB62A4;
     margin-bottom: 0.5rem;
 }
 
@@ -155,11 +174,11 @@ body{
     height: 4rem;
     width: 4rem;
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid #782484;
 }
 
 .marcada {
-    background-color: lightgray;
+    background-color: #8E4D98;
     font-size: 3rem;
     text-align: center;
     line-height: 4rem;
@@ -172,12 +191,17 @@ body{
 }
 
 .back-red {
-    background-color: red !important;
+    background-color: #E05C1F !important;
 }
 
 .back-green {
-    background-color: green !important;
+    background-color: #F4C842 !important;
 }
+
+img{
+    width: 100%;
+}
+
 /* ...Juego ***/
 
 

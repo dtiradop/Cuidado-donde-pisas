@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contadorBanderasRestantes = document.getElementById('banderas-restantes');
     const botonGenerar = document.querySelector('.btn-generar');
 
+
     // Listeners
     botonGenerar.addEventListener('click', crearJuego);
     var contador = 0;
@@ -109,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Desvelamos todas las bombas
         casillas.forEach((casilla, index, array) => {
             if (casilla.classList.contains('bomba')) {
-                casilla.innerHTML = '🧟‍♂️';
+                casilla.innerHTML =  "<img src=/imgs/1.png>";
                 casilla.classList.remove('bomba');
                 casilla.classList.add('marcada');
             }
@@ -130,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!casilla.classList.contains('marcada') && numBanderas < numBombas) {
             if (!casilla.classList.contains('bandera')) {
                 casilla.classList.add('bandera');
-                casilla.innerHTML = '🚩';
+                casilla.innerHTML = "<img src=/imgs/acsendo.png>";
                 numBanderas++;
                 actualizaNumBanderas();
                 if (numBanderas == 10){
@@ -167,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             casillas.forEach((casilla, index, array) => {
                 if (casilla.classList.contains('bomba')) {
-                    casilla.innerHTML = '🧟‍♂️';
+                    casilla.innerHTML = "<img src=/imgs/1.png>";
                     casilla.classList.remove('bomba');
                     casilla.classList.add('marcada');
                 }
@@ -260,6 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
      * @description Función principal que crea el juego 
      **/
     function crearJuego() {
+        document.getElementById("instrucciones").style.display = "none";
+        document.getElementById("btn-generar").style.display = "none";
         width = 10;
         numBombas = 10;
 
