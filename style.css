@@ -10,6 +10,7 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .main {

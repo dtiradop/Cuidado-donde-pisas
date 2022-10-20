@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // Selectores
     const contenedorJuego = document.querySelector('.contenedor-juego');
     const juego = document.querySelector('.juego');
@@ -10,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Listeners
     botonGenerar.addEventListener('click', crearJuego);
+    var contador = 0;
 
 
     // Variables GLOBALES
@@ -190,22 +190,37 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param casilla Casilla sobre la que se hizo click
      **/
      
-    var contador = 0;
     function click(casilla) {
         // Comprobamos si la casilla no es clickeable
         if (casilla.classList.contains('marcada') || casilla.classList.contains('bandera') || finPartida) return;
 
-        if (contador < 3) {
         if (casilla.classList.contains('bomba')) {
             // Casilla bomba
              /*bomba(casilla);*/
-            document.getElementById("modal").style.display = "flex";
-            document.getElementById("modalTitulo").innerHTML = "Manolo";
-            const Modalbutton = document.querySelector('#modalButton');
-            const Modalbutton2 = document.querySelector('#modalButton2');
-            Modalbutton.addEventListener('click', cerrarModal);
-            Modalbutton2.addEventListener('click', (event) =>  bomba(casilla));
-            contador++;
+             contador++;
+             console.log(contador)
+            if(contador == 1){
+                document.getElementById("modal").style.display = "flex";
+                document.getElementById("modalTitulo").innerHTML = "Manolo";
+                const Modalbutton = document.querySelector('#modalButton');
+                const Modalbutton2 = document.querySelector('#modalButton2');
+                Modalbutton.addEventListener('click', cerrarModal);
+                Modalbutton2.addEventListener('click', (event) =>  bomba(casilla));
+             } else if(contador == 2){
+                document.getElementById("modal").style.display = "flex";
+                document.getElementById("modalTitulo").innerHTML = "Diego";
+                const Modalbutton = document.querySelector('#modalButton');
+                const Modalbutton2 = document.querySelector('#modalButton2');
+                Modalbutton.addEventListener('click', cerrarModal);
+                Modalbutton2.addEventListener('click', (event) =>  bomba(casilla));
+             }else if(contador == 3){
+                document.getElementById("modal").style.display = "flex";
+                document.getElementById("modalTitulo").innerHTML = "Daniela";
+                const Modalbutton = document.querySelector('#modalButton');
+                const Modalbutton2 = document.querySelector('#modalButton2');
+                Modalbutton.addEventListener('click', cerrarModal);
+                Modalbutton2.addEventListener('click', (event) =>  bomba(casilla));
+             }
             
         } else {
             let total = casilla.getAttribute('data');
@@ -221,13 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
             revelarCasillas(casilla);
 
         }
-    }
-    else {
-        finPartida = true;
-        resultado.textContent = 'Muy bien PERDISTE!!!';
-        resultado.classList.add('back-red');
-        bomba(casilla)
-    }
+        if (contador > 3) {
+            bomba(casilla)
+        }
     }
 
     /**
