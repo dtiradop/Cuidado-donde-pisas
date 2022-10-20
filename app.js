@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function bomba(casillaClickeada) {
         cerrarModal();
+        compruebaPartida()
         finPartida = true;
         casillaClickeada.classList.add('back-red');
 
@@ -115,9 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 casilla.classList.add('marcada');
             }
         });
-
-        resultado.textContent = 'Lo siento, PERDISTE!!!';
-        resultado.classList.add('back-red');
     }
 
 
@@ -158,13 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (aciertos === numBombas) {
             finPartida = true;
-            resultado.textContent = 'Muy bien GANASTE!!!';
-            resultado.classList.add('back-green');
+            resultado.textContent = 'Tu puntaje es ' + aciertos + ' de 10';
         }
         else{
             finPartida = true;
-            resultado.textContent = 'Muy bien PERDISTE!!!';
-            resultado.classList.add('back-red');
+            resultado.textContent = 'Tu puntaje es ' + aciertos + ' de 10';
             
             casillas.forEach((casilla, index, array) => {
                 if (casilla.classList.contains('bomba')) {

@@ -43,7 +43,7 @@ body{
 
 #modalInfo{
     width: 500px;
-    height: 380px;
+    height: 400px;
     background-color: white;
     color: #363636;
     border-radius: 15px;
@@ -61,26 +61,49 @@ body{
 #modalParrafo{
     padding: 0 35px;
     margin: 10px 0;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 #modalButton{
-    background: #ff0040;
-    width: 120px;
-    height: 50px;
-    border-radius: 50px;
+    background: #782484;
+    border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     cursor: pointer;
     transition: ease-in-out .3s all;
-    margin-top: 15px;
+    margin-top: 6px;
+    border: none;
+    margin-right: 20px;
+    padding: 0.5rem 1rem;
+}
+
+#modalButton2{
+    background: #782484;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: ease-in-out .3s all;
+    margin-top: 6px;
+    border: none;
+    padding: 0.5rem 1rem;
 }
 
 #modalButton:hover{
     background: #ffffff;
-    border: #ff0040 solid 1px;
-    color: #ff0040;
+    border: #782484 solid 1px;
+    color: #782484;
+}
+#modalButton2:hover{
+    background: #ffffff;
+    border: #782484 solid 1px;
+    color: #782484;
+}
+
+#modalBotones{
+    display: flex;
 }
 
 /*******************************************************************************\ 
@@ -207,7 +230,7 @@ img{
 
 /*** Resultado... */
 .resultado-juego {
-    font-size: 2.5vw;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     padding: 1rem 0rem;
