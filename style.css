@@ -23,7 +23,7 @@ body{
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin: 21px 0px;
+    margin: 10px 0px;
 }
 
 #modal{
@@ -165,7 +165,7 @@ body{
 .contenedor-juego {
     display: flex;
     flex-direction: column;
-    margin: 1rem 2rem;
+    margin: 0rem 2rem;
     align-items: center;
 }
 
@@ -236,3 +236,49 @@ img{
     padding: 1rem 0rem;
 }
 /* ...Resultado ***/
+
+#oFormulario{
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    color: #363636;
+    border-radius: 15px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#oFormulario form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    padding: 4rem 0rem;
+}
+#oFormulario form input{
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    border: 1px solid blueviolet;
+    border-radius: 8px;
+}
+#oFormulario form button{
+    background: #782484;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.0rem;
+    color: white;
+    cursor: pointer;
+    transition: ease-in-out .3s all;
+    margin-top: 6px;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+#oFormulario form button:hover{
+    background: #ffffff;
+    border: #782484 solid 1px;
+    color: #782484;
+}

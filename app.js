@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param casillaClickeada Casilla donde si hizo click
      */
     function bomba(casillaClickeada) {
-        cerrarModal();
         compruebaPartida()
         finPartida = true;
         casillaClickeada.classList.add('back-red');
@@ -152,16 +151,21 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < casillas.length; i++) {
             if (casillas[i].classList.contains('bandera') && casillas[i].classList.contains('bomba'))
                 aciertos++;
+                console.log(aciertos)
         }
 
         if (aciertos === numBombas) {
             finPartida = true;
             resultado.textContent = 'Tu puntaje es ' + aciertos + ' de 10';
+            document.getElementById("modal").style.display = "flex";
+            document.getElementById("oFormulario").style.display = "flex";
+            document.getElementById("modalInfo").style.display = "none";
+            var a = document.getElementById('puntaje_cuidado');
+            a.value = aciertos;
         }
-        else{
+        else {
             finPartida = true;
             resultado.textContent = 'Tu puntaje es ' + aciertos + ' de 10';
-            
             casillas.forEach((casilla, index, array) => {
                 if (casilla.classList.contains('bomba')) {
                     casilla.innerHTML = "<img src=/imgs/1.png>";
@@ -169,6 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     casilla.classList.add('marcada');
                 }
             });
+
+            document.getElementById("modal").style.display = "flex";
+            document.getElementById("oFormulario").style.display = "flex";
+            document.getElementById("modalInfo").style.display = "none";
+            var a = document.getElementById('puntaje_cuidado');
+            a.value = aciertos;
         }
     }
 
@@ -252,7 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function cerrarModal(){
         document.getElementById("modal").style.display = "none";
     }
-
     /** 
      * @description Función principal que crea el juego 
      **/

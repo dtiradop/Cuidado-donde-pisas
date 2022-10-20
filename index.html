@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5513276.js"></script>
+<!-- End of HubSpot Embed Code --> 
 
 </head>
 <body>
@@ -38,7 +41,7 @@
         <div class="contenedor-juego hidden">
             <h2>Banderas colocadas: <span id="num-banderas"></span> (faltan <span id="banderas-restantes"></span>)</h2>
             <div class="juego"></div>
-            <div class="resultado-juego"></div>
+            
         </div>
         <div id="modal">
             <div id="modalInfo">
@@ -47,7 +50,16 @@
                 <div id="modalBotones">
                     <button id="modalButton">Correcto</button>
                     <button id="modalButton2">Incorrecto</button>
-                </diV>
+                </div>
+            </div>
+            <div id="oFormulario">
+                <form name="formulario_cuidado-donde-pisas" >
+                    <div class="resultado-juego"></div>
+                    <p>Llena estos datos para enviar tu puntaje:</p>
+                  <input type="text" class="" id="email" name="email" placeholder="Email" required/>
+                  <input type="number" class="" id="puntaje_cuidado" name="puntaje_cuidado" placeholder="Puntaje" readonly required/>
+                  <button type="submit" class="btn btn-success">Enviar</button>
+                </form>
             </div>
         </div>
     </div>
