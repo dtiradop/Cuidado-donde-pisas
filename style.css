@@ -55,10 +55,11 @@ body{
 
 #modalTitulo{
     margin-bottom: 10px;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 #modalParrafo{
+    text-align: center;
     padding: 0 35px;
     margin: 10px 0;
     font-size: 1.2rem;
@@ -86,13 +87,14 @@ body{
     background: #782484;
     border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
     transition: ease-in-out .3s all;
     margin-top: 6px;
     border: none;
     margin-right: 20px;
+    margin-left: 20px;
     padding: 0.5rem 1rem;
 }
 
@@ -100,12 +102,13 @@ body{
     background: #782484;
     border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
     transition: ease-in-out .3s all;
     margin-top: 6px;
     border: none;
+    margin-right: 20px;
     padding: 0.5rem 1rem;
 }
 
