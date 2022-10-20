@@ -63,12 +63,30 @@ body{
     margin: 10px 0;
     font-size: 1.2rem;
 }
+#instrucciones{
+    padding: 0 35px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: white;
+    text-align: justify;
+}
+
+#ins {
+    padding: 0 350px;
+    font-size: 2.0rem;
+    text-align: left;
+    color: #ffffff;
+}
+
+#nota {
+    font-size: 0.7rem;
+}
 
 #modalButton{
     background: #782484;
     border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     color: white;
     cursor: pointer;
     transition: ease-in-out .3s all;
@@ -82,7 +100,7 @@ body{
     background: #782484;
     border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     color: white;
     cursor: pointer;
     transition: ease-in-out .3s all;
@@ -179,7 +197,7 @@ body{
     margin-bottom: 0.5rem;
 }
 #num-banderas {
-    color: blue;
+    color: #FFE874;
     font-weight: bold;
 }
 /* ...Contador de banderas ***/

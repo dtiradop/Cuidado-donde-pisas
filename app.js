@@ -208,23 +208,32 @@ document.addEventListener('DOMContentLoaded', () => {
              console.log(contador)
             if(contador == 1){
                 document.getElementById("modal").style.display = "flex";
-                document.getElementById("modalTitulo").innerHTML = "Manolo";
+                document.getElementById("modalTitulo").innerHTML = "Primera pregunta";
+                document.getElementById("modalParrafo").innerHTML = "¿Cuáles son las principales causas de malas decisiones?"
                 const Modalbutton = document.querySelector('#modalButton');
                 const Modalbutton2 = document.querySelector('#modalButton2');
+                Modalbutton.innerHTML="Falta de información";
+                Modalbutton2.innerHTML="Desorganización";
                 Modalbutton.addEventListener('click', cerrarModal);
                 Modalbutton2.addEventListener('click', (event) =>  bomba(casilla));
              } else if(contador == 2){
                 document.getElementById("modal").style.display = "flex";
-                document.getElementById("modalTitulo").innerHTML = "Diego";
+                document.getElementById("modalTitulo").innerHTML = "Segunda pregunta";
+                document.getElementById("modalParrafo").innerHTML = "¿Qué herramientas puedes usar para mejorar el proceso de toma de decisiones?"
                 const Modalbutton = document.querySelector('#modalButton');
                 const Modalbutton2 = document.querySelector('#modalButton2');
+                Modalbutton.innerHTML="People analytics";
+                Modalbutton2.innerHTML="Consejos de un amigo";
                 Modalbutton.addEventListener('click', cerrarModal);
                 Modalbutton2.addEventListener('click', (event) =>  bomba(casilla));
              }else if(contador == 3){
                 document.getElementById("modal").style.display = "flex";
-                document.getElementById("modalTitulo").innerHTML = "Daniela";
+                document.getElementById("modalTitulo").innerHTML = "Tercera pregunta";
+                document.getElementById("modalParrafo").innerHTML = "¿La mala toma de decisiones puede afectar….?"
                 const Modalbutton = document.querySelector('#modalButton');
                 const Modalbutton2 = document.querySelector('#modalButton2');
+                Modalbutton.innerHTML="El funcionamiento y desempeño en general";
+                Modalbutton2.innerHTML="No afecta en nada";
                 Modalbutton.addEventListener('click', cerrarModal);
                 Modalbutton2.addEventListener('click', (event) =>  bomba(casilla));
              }
@@ -266,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * @description Función principal que crea el juego 
      **/
     function crearJuego() {
-        document.getElementById("instrucciones").style.display = "none";
+        document.getElementById("ins").style.display = "none";
         document.getElementById("btn-generar").style.display = "none";
         width = 10;
         numBombas = 10;
